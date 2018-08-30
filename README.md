@@ -6,7 +6,8 @@ x := check strconv.Atoi(a)
 y := check strconv.Atoi(b)
 fmt.Println("result:", x + y)
 return nil
-}```  
+}
+```  
 simplify used function check for last value:
 ```
 func printSum(a, b string) error {
