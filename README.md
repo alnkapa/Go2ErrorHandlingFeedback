@@ -1,27 +1,13 @@
-Why do I need a handle?
 ```
 func printSum(a, b string) error {
-handle err { return err }
-x := check strconv.Atoi(a)
-y := check strconv.Atoi(b)
+check1 := func (error) { // function with any name
+  fmt.Println("result err:",err)
+  return err 
+}
+x := check1 strconv.Atoi(a) // on err != nil return from function "printSum"
+y := check1(strconv.Atoi(b)) // on err != nil continue execute function "printSum"
 fmt.Println("result:", x + y)
 return nil
 }
-```  
-simplify used function check for last value:
 ```
-func printSum(a, b string) error {
-check err { return err }
-x := check strconv.Atoi(a)
-y := check strconv.Atoi(b)
-fmt.Println("result:", x + y)
-return nil
-}
 
-func printTest(a string) error {
-errorCheck err { return err }
-rune, multibyte, tail := errorCheck strconv.UnquoteChar(a)
-fmt.Println("result:", rune, multibyte, tail)
-return nil
-}
-```
